@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <ImageView
+        android:id="@+id/btn_expand_audio"
+        android:src="@drawable/ic_baseline_more_vert_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/BottomPlayerIcon"
+        app:tint="@color/black" />
+
+    <ImageView
+        android:id="@+id/btn_play_pause"
+        android:src="@drawable/ic_baseline_play_arrow_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_expand_audio"
+        style="@style/BottomPlayerIcon"
+        app:tint="@color/black" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_audio_name"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/reply"
+        app:layout_constraintStart_toEndOf="@id/btn_play_pause"
+        android:gravity="center_vertical"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        app:layout_constraintHorizontal_weight="1"
+        android:text="Audio name" />
+
+    <ImageView
+        android:id="@+id/reply"
+        android:src="@drawable/ic_baseline_replay_5_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/speed"
+        style="@style/BottomPlayerIcon"/>
+
+
+    <ImageView
+        android:id="@+id/speed"
+        android:src="@drawable/ic_baseline_1x_mobiledata_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/forward"
+        style="@style/BottomPlayerIcon"/>
+
+    <ImageView
+        android:id="@+id/forward"
+        android:src="@drawable/ic_baseline_forward_5_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/BottomPlayerIcon"/>
+
+</merge>

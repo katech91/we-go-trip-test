@@ -1,18 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:id="@+id/coordinator_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btn_close"
+        android:src="@drawable/ic_baseline_close_24"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:padding="16dp"
+        android:layout_margin="12dp"
+        android:layout_gravity="top|start"
+        app:tint="@color/medium_gray"
+        android:background="@drawable/ic_baseline_circle_24"
+        android:elevation="4dp"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:src="@drawable/ic_baseline_more_horiz_24"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:padding="16dp"
+        android:layout_margin="12dp"
+        android:layout_gravity="end|top"
+        app:tint="@color/purple_500"
+        android:background="@drawable/ic_baseline_circle_24"
+        android:elevation="4dp"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_anchor="@id/btn_close"
+        app:layout_anchorGravity="bottom|center"
+        android:text="STEP 3/10"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/picture"
+        android:src="@drawable/triumphal_arch"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:maxHeight="200dp"
+        android:layout_marginTop="100dp"
+        app:layout_dodgeInsetEdges="top"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@id/picture"
+        app:layout_anchorGravity="bottom"
+        app:layout_dodgeInsetEdges="top">
+        <TextView
+            android:id="@+id/tv_text_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fjjsjfklsfjslkfddjjjjjjjjflksdfjkldsfjlksjfklsdjfhjsfklhsjflkjsklfhsdlfjkjsdlkfhslkfjdskghsjdklfhsjkgfdklskjjslkhaslkghskgl"/>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.wegotrip.katech.ui.custom.BottomPlayer
+        android:id="@+id/bottom_player"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:minHeight="56dp"
+        app:layout_insetEdge="bottom"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
